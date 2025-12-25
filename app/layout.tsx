@@ -2,7 +2,6 @@ import { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 
 import './globals.css';
-import CarbonAd from '@/components/CarbonAd';
 
 export const metadata: Metadata = {
   icons: {
@@ -60,23 +59,11 @@ export default async function RootLayout({
           rel="search"
           type="application/opensearchdescription+xml"
           title="httpcat"
-          href="https://http.cat/opensearch.xml"
+          href="/opensearch.xml"
         />
       </head>
       <body>
-        <CarbonAd />
         <div className="p-4 sm:px-16 sm:py-4 lg:px-32 lg:py-4">{children}</div>
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-          window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-          ga('create', 'UA-27701865-1', 'auto');
-          ga('send', 'pageview');
-        `}
-        </Script>
-        <Script
-          src="https://www.google-analytics.com/analytics.js"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
